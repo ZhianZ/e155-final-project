@@ -1,0 +1,50 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints"/>
+ <ExecutionProfileWindow/>
+ <FrameBuffer/>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="final_project"/>
+  <ProjectSessionItem path="final_project;final_project"/>
+  <ProjectSessionItem path="final_project;final_project;CMSIS Files"/>
+  <ProjectSessionItem path="final_project;final_project;Script Files"/>
+  <ProjectSessionItem path="final_project;final_project;Source Files"/>
+  <ProjectSessionItem path="final_project;final_project;Source Files;lib"/>
+  <ProjectSessionItem path="final_project;final_project;System Files"/>
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="67" useTextEdit="1" path="STM32L432KC_DMA.c" left="0" selected="1" top="52" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="24" useTextEdit="1" path="STM32L432KC_DMA.h" left="0" top="1" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="STM32L432KC_ADC.c" left="0" top="14" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="STM32L432KC_RCC.c" left="0" top="10" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="928" useTextEdit="1" path="STM32L4xx/Device/Include/stm32l432xx.h" left="0" top="916" codecName="Default"/>
+ </Files>
+ <EMStudioWindow activeProject="final_project" fileDialogDefaultFilter="*" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/Zhian Zhou/Documents/GitHub/e155-final-project/mcu/lib" debugSearchPath="" autoConnectCapabilities="3199"/>
+</session>
