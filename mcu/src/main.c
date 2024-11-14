@@ -13,6 +13,8 @@ Purpose : Generic application start
 #include <stdio.h>
 #include "STM32L432KC.h"
 
+#include "../lib/arm_math.h"
+
 /*********************************************************************
 *
 *       main()
