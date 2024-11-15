@@ -40,11 +40,15 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="67" useTextEdit="1" path="STM32L432KC_DMA.c" left="0" selected="1" top="52" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="24" useTextEdit="1" path="STM32L432KC_DMA.h" left="0" top="1" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="STM32L432KC_ADC.c" left="0" top="14" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="STM32L432KC_RCC.c" left="0" top="10" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="928" useTextEdit="1" path="STM32L4xx/Device/Include/stm32l432xx.h" left="0" top="916" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="56" useTextEdit="1" path="STM32L432KC_DMA.c" left="0" top="48" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="30" useTextEdit="1" path="STM32L432KC_DMA.h" left="0" top="7" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="34" y="40" useTextEdit="1" path="STM32L432KC_ADC.c" left="0" top="19" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="STM32L432KC_RCC.c" left="0" top="4" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="21" y="6259" useTextEdit="1" path="STM32L4xx/Device/Include/stm32l432xx.h" left="0" top="6243" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="49" useTextEdit="1" path="main.c" left="0" top="21" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="66" y="92" useTextEdit="1" path="DMA_USART_demo.c" left="0" top="69" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="basic_math_functions.h" left="0" top="63" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="135" useTextEdit="1" path="CMSIS_5/CMSIS/DSP/Include/dsp/none.h" left="0" top="121" codecName="Default"/>
  </Files>
- <EMStudioWindow activeProject="final_project" fileDialogDefaultFilter="*" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/Zhian Zhou/Documents/GitHub/e155-final-project/mcu/lib" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <EMStudioWindow activeProject="final_project" fileDialogDefaultFilter="*" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/Zhian Zhou/Documents/GitHub/tutorial-dma/src" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

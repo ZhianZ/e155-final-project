@@ -45,6 +45,10 @@
       project_directory=""
       project_type="Executable"
       target_reset_script="Reset();" />
+    <configuration
+      CMSIS_DSP="Cortex-M4 Little Endian With FPU"
+      Name="Debug"
+      c_user_include_directories=".;../lib" />
     <folder Name="CMSIS Files">
       <file file_name="STM32L4xx/Device/Include/stm32l4xx.h" />
       <file file_name="STM32L4xx/Device/Source/system_stm32l4xx.c">
@@ -61,6 +65,41 @@
     </folder>
     <folder Name="Source Files">
       <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
+      <folder Name="dsp">
+        <file file_name="basic_math_functions.h" />
+        <file file_name="basic_math_functions_f16.h" />
+        <file file_name="bayes_functions.h" />
+        <file file_name="bayes_functions_f16.h" />
+        <file file_name="complex_math_functions.h" />
+        <file file_name="complex_math_functions_f16.h" />
+        <file file_name="controller_functions.h" />
+        <file file_name="controller_functions_f16.h" />
+        <file file_name="debug.h" />
+        <file file_name="distance_functions.h" />
+        <file file_name="distance_functions_f16.h" />
+        <file file_name="fast_math_functions.h" />
+        <file file_name="fast_math_functions_f16.h" />
+        <file file_name="filtering_functions.h" />
+        <file file_name="filtering_functions_f16.h" />
+        <file file_name="interpolation_functions.h" />
+        <file file_name="interpolation_functions_f16.h" />
+        <file file_name="matrix_functions.h" />
+        <file file_name="matrix_functions_f16.h" />
+        <file file_name="matrix_utils.h" />
+        <file file_name="none.h" />
+        <file file_name="quaternion_math_functions.h" />
+        <file file_name="statistics_functions.h" />
+        <file file_name="statistics_functions_f16.h" />
+        <file file_name="support_functions.h" />
+        <file file_name="support_functions_f16.h" />
+        <file file_name="svm_defines.h" />
+        <file file_name="svm_functions.h" />
+        <file file_name="svm_functions_f16.h" />
+        <file file_name="transform_functions.h" />
+        <file file_name="transform_functions_f16.h" />
+        <file file_name="utils.h" />
+        <file file_name="window_functions.h" />
+      </folder>
       <folder Name="lib">
         <file file_name="STM32L432KC.h" />
         <file file_name="STM32L432KC_ADC.c" />
@@ -80,6 +119,9 @@
         <file file_name="STM32L432KC_USART.c" />
         <file file_name="STM32L432KC_USART.h" />
       </folder>
+      <file file_name="DMA_USART_demo.c">
+        <configuration Name="Debug" build_exclude_from_build="Yes" />
+      </file>
       <file file_name="main.c" />
     </folder>
     <folder Name="System Files">

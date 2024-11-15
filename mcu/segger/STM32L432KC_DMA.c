@@ -13,12 +13,12 @@ More can be found out about the project at the report below:
 ***************************************************/
 
 #include "STM32L432KC_DMA.h"
-#include "STM32L432KC_RCC.h"
 
 void configureDMA(void) {
 
     ///////////////////  CONFIGURE CLOCK TO DMA  //////////////
-    RCC->AHB1ENR |= (RCC_AHB1ENR_DMA1EN); // Enable DMA1 clock
+    // Enable DMA1 clock
+    RCC->AHB1ENR |= (RCC_AHB1ENR_DMA1EN); 
     
     // Make sure AHB Prescaler is set to divide by 1, field cleared
     RCC->CFGR &= ~(RCC_CFGR_HPRE);
@@ -28,6 +28,7 @@ void configureDMA(void) {
     /*  For DMA1, ADC1 is a top priority. It is on channel 1.
         C1S should be 0000 for ADC1 on Channel 1. Seems to be
         set in DMA1_CSELR register. */
+    DMA1_CSELR->CSELR &= ~(DMA_CSELR_C1S);
 
     /*  DMA_CCRx PSIZE and MSIZE set the transfer sizes 
         PINC and MINC control whether address is automatically incremented
@@ -50,8 +51,9 @@ void configureDMA(void) {
     DMA1_Channel1->CNDTR |= _VAL2FLD(DMA_CNDTR_NDT, BUFFER_SIZE);
 
     // In DMA_CCRx register, configure...
+    DMA1_Channel1->CCR &= ~(0xFFFFFFFF); // Reset DMA channel configuration
     // The channel priority
-    DMA1_Channel1->CCR |= _VAL2FLD(DMA_CCR_PL, 3); // Channel priority very high ?
+    DMA1_Channel1->CCR |= _VAL2FLD(DMA_CCR_PL, 3); // Channel priority very high
 
     // The data transfer direction (DIR=0 implies peripheral-to-memory)
     DMA1_Channel1->CCR &= ~(DMA_CCR_DIR);

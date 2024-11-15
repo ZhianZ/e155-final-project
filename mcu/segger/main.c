@@ -11,6 +11,12 @@ Purpose : Generic application start
 */
 
 #include <stdio.h>
+#include "STM32L432KC.h"
+
+#include "arm_math.h"
+#include "arm_const_structs.h"
+
+//#include "../lib/arm_math.h"
 
 /*********************************************************************
 *
@@ -20,14 +26,27 @@ Purpose : Generic application start
 *   Application entry point.
 */
 int main(void) {
-  int i;
+    configureFlash();
+    configureClock();
 
-  for (i = 0; i < 100; i++) {
-    printf("Hello World %d!\n", i);
-  }
-  do {
-    i++;
-  } while (1);
+    configureADC(); // Configure ADC
+    
+    // Initialize timer 2 for delay
+    RCC->APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
+    initTIM(TIM2);
+
+    while (1) {
+        // Read ADC value
+        uint8_t adcValue = readADC();
+
+        // Print ADC value
+        printf("ADC Value: %d\n", adcValue);
+
+        // Add delay
+        delay_millis(TIM2, 500);
+    }
+
+    return 0;
 }
 
 /*************************** End of file ****************************/
