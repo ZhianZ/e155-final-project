@@ -14,6 +14,7 @@
   <ProjectSessionItem path="final_project;final_project;CMSIS Files"/>
   <ProjectSessionItem path="final_project;final_project;Script Files"/>
   <ProjectSessionItem path="final_project;final_project;Source Files"/>
+  <ProjectSessionItem path="final_project;final_project;Source Files;dsp"/>
   <ProjectSessionItem path="final_project;final_project;Source Files;lib"/>
   <ProjectSessionItem path="final_project;final_project;System Files"/>
  </Project>
@@ -40,15 +41,13 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="56" useTextEdit="1" path="STM32L432KC_DMA.c" left="0" top="48" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="30" useTextEdit="1" path="STM32L432KC_DMA.h" left="0" top="7" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="56" useTextEdit="1" path="STM32L432KC_DMA.c" left="0" top="46" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="30" useTextEdit="1" path="STM32L432KC_DMA.h" left="0" top="2" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="34" y="40" useTextEdit="1" path="STM32L432KC_ADC.c" left="0" top="19" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="STM32L432KC_RCC.c" left="0" top="4" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="21" y="6259" useTextEdit="1" path="STM32L4xx/Device/Include/stm32l432xx.h" left="0" top="6243" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="49" useTextEdit="1" path="main.c" left="0" top="21" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="66" y="92" useTextEdit="1" path="DMA_USART_demo.c" left="0" top="69" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="basic_math_functions.h" left="0" top="63" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="135" useTextEdit="1" path="CMSIS_5/CMSIS/DSP/Include/dsp/none.h" left="0" top="121" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="42" y="81" useTextEdit="1" path="DMA_USART_demo.c" left="0" selected="1" top="0" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="final_project" fileDialogDefaultFilter="*" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/Zhian Zhou/Documents/GitHub/tutorial-dma/src" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
