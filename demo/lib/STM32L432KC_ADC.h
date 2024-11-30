@@ -16,6 +16,7 @@
 
 void ms_delay(int ms);
 void configureADC(void);
+void startADC(void);
 uint16_t readADC(void);
 
 #endif

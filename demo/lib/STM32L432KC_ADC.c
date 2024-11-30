@@ -21,7 +21,6 @@ void configureADC(void) {
     // Set up ADC clock
     RCC->AHB2ENR |= (RCC_AHB2ENR_ADCEN); // Enable ADC clock
     RCC->CCIPR |= _VAL2FLD(RCC_CCIPR_ADCSEL, 0b11); // System clock selected as ADC clock
-    // ADC1_COMMON->CCR &= ~(ADC_CCR_CKMODE, 0b11);
 
     // Calibrate ADC
     ADC1->CR &= ~(ADC_CR_DEEPPWD); // Disable deep power down 
@@ -41,9 +40,9 @@ void configureADC(void) {
 
     // Configure ADC conversion
     ADC1->SMPR2 |= _VAL2FLD(ADC_SMPR2_SMP15, 2); // Set sampling time for channel 15 to 12.5 cycles
-    //ADC1->CFGR |= (ADC_CFGR_DMAEN); // Enable DMA
-    //ADC1->CFGR |= (ADC_CFGR_DMACFG); // Select DMA circular mode
-    // ADC1->IER |= (ADC_IER_EOCIE); // Enable EOC interrupt Jackson Testing Removal
+    ADC1->CFGR |= (ADC_CFGR_DMAEN); // Enable DMA
+    ADC1->CFGR |= (ADC_CFGR_DMACFG); // Select DMA circular mode
+    ADC1->IER |= (ADC_IER_EOCIE); // Enable EOC interrupt
     // DMA Enable and circular mode could go here
 
     ADC1->CFGR |= (ADC_CFGR_CONT); // Select Continous conversions
@@ -51,7 +50,11 @@ void configureADC(void) {
     ADC1->SQR1 |= _VAL2FLD(ADC_SQR1_L, 0); // Set to only scan 1 channel
     ADC1->CFGR |= _VAL2FLD(ADC_CFGR_RES, 2); // 8-bit resolution
     ADC1->CFGR |= ADC_CFGR_OVRMOD;  // Made it rewrite new conversions over data register - Jackson Added
-    ADC1->CR |= ADC_CR_ADSTART;  // Moved a single start to here - Jackson Added
+    
+}
+
+void startADC(void) {
+  ADC1->CR |= ADC_CR_ADSTART;  // Moved an initial start to here - Jackson Added
 }
 
 uint16_t readADC(void) {
