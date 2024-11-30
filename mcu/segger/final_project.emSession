@@ -1,7 +1,9 @@
 <!DOCTYPE CrossStudio_Session_File>
 <session>
  <Bookmarks/>
- <Breakpoints groups="Breakpoints" active_group="Breakpoints"/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints">
+  <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
+ </Breakpoints>
  <ExecutionProfileWindow/>
  <FrameBuffer/>
  <Memory1/>
@@ -14,7 +16,6 @@
   <ProjectSessionItem path="final_project;final_project;CMSIS Files"/>
   <ProjectSessionItem path="final_project;final_project;Script Files"/>
   <ProjectSessionItem path="final_project;final_project;Source Files"/>
-  <ProjectSessionItem path="final_project;final_project;Source Files;dsp"/>
   <ProjectSessionItem path="final_project;final_project;Source Files;lib"/>
   <ProjectSessionItem path="final_project;final_project;System Files"/>
  </Project>
@@ -41,13 +42,16 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="56" useTextEdit="1" path="STM32L432KC_DMA.c" left="0" top="46" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="30" useTextEdit="1" path="STM32L432KC_DMA.h" left="0" top="2" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="34" y="40" useTextEdit="1" path="STM32L432KC_ADC.c" left="0" top="19" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="STM32L432KC_RCC.c" left="0" top="4" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="21" y="6259" useTextEdit="1" path="STM32L4xx/Device/Include/stm32l432xx.h" left="0" top="6243" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="49" useTextEdit="1" path="main.c" left="0" top="21" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="42" y="81" useTextEdit="1" path="DMA_USART_demo.c" left="0" selected="1" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="36" y="33" useTextEdit="1" path="main.c" left="0" top="4" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="36" useTextEdit="1" path="../lib/arm_math.h" left="0" top="22" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="32" useTextEdit="1" path="../lib/dsp/basic_math_functions.h" left="0" top="5" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="145" useTextEdit="1" path="../lib/dsp/none.h" left="0" top="131" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="CMSIS_5/CMSIS/DSP/Include/arm_math.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="60" y="21" useTextEdit="1" path="STM32L432KC_ADC.c" left="0" top="4" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="47" y="106" useTextEdit="1" path="STM32L432KC_DMA.c" left="0" selected="1" top="80" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="31" y="24" useTextEdit="1" path="STM32L432KC_DMA.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="47" y="26" useTextEdit="1" path="STM32L432KC.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="22" useTextEdit="1" path="DMA_USART_demo.c" left="0" top="0" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="final_project" fileDialogDefaultFilter="*" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/Zhian Zhou/Documents/GitHub/tutorial-dma/src" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

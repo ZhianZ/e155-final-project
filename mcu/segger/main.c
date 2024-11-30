@@ -16,7 +16,6 @@ Purpose : Generic application start
 #include "arm_math.h"
 #include "arm_const_structs.h"
 
-//#include "../lib/arm_math.h"
 
 /*********************************************************************
 *
@@ -25,6 +24,9 @@ Purpose : Generic application start
 *  Function description
 *   Application entry point.
 */
+
+volatile int data_ready;
+
 int main(void) {
     configureFlash();
     configureClock();

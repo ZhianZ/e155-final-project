@@ -44,7 +44,7 @@ void configureDMA(void) {
             // SRAM1 has (data sheet) 48 Kbyte mapped at address 0x2000 0000 to 0x2000 BFFF, I think.
             // Binary representation of 0x2000 0000 below:
     // DMA1_Channel1->CMAR |= 0b00100000000000000000000000000000;
-    DMA1_Channel1->CMAR |= _VAL2FLD(DMA_CMAR_MA, SRAM1_BASE);
+    DMA1_Channel1->CMAR = (uint32_t)buffer1;
 
     // Configure the total number of data to transfer in DMA_CNDTRx register
     // May not be necessary if we are using circular mode
@@ -59,7 +59,7 @@ void configureDMA(void) {
     DMA1_Channel1->CCR &= ~(DMA_CCR_DIR);
 
     // The circular mode
-    DMA1_Channel1->CCR |= (DMA_CCR_CIRC);
+    // DMA1_Channel1->CCR |= (DMA_CCR_CIRC);
 
     // The Peripheral and Memory Incremented mode
     DMA1_Channel1->CCR &= ~(DMA_CCR_PINC); // Disable peripheral increment mode
@@ -68,10 +68,45 @@ void configureDMA(void) {
     // The Peripheral and Memory data size
     DMA1_Channel1->CCR |= _VAL2FLD(DMA_CCR_MINC, 1); // Memory data size 16 bits
 
-    // The interrupt enable for half, full, transfer errors
-
+    // The interrupt enable for full transfer
+     DMA1_Channel1->CCR |= DMA_CCR_TCIE;
 
     // FINALLY, activate the channel by setting EN bit in DMA_CCRx
     DMA1_Channel1->CCR |= (DMA_CCR_EN);
 
+    // Enable DMA1 Channel 1 interrupt in NVIC
+    NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+    NVIC_SetPriority(DMA1_Channel1_IRQn, 0);
+
+}
+
+
+void DMA1_Channel1_IRQHandler(void) {
+    // Check for Transfer Complete
+    if (DMA1->ISR & DMA_ISR_TCIF1) {
+        DMA1->IFCR = DMA_IFCR_CTCIF1; // Clear Transfer Complete interrupt flag
+        
+        // Ensure FFT processing is complete before switching buffers
+        if (!FFTReady) {
+            return; // Skip switching if FFT buffer hasn't been processed
+        }
+
+        // Switch buffers
+        if (DMAptr == buffer1) {
+            DMAptr = buffer2; // DMA will now write to buffer2
+            FFTptr = buffer1; // FFT processing will use buffer1
+        } else {
+            DMAptr = buffer1; // DMA will now write to buffer1
+            FFTptr = buffer2; // FFT processing will use buffer2
+        }
+
+        // Mark FFT buffer as not ready
+        FFTReady = 0;
+
+        // Update DMA memory address
+        DMA1_Channel1->CMAR = (uint32_t)DMAptr;
+
+        // Re-enable DMA channel
+        DMA1_Channel1->CCR |= DMA_CCR_EN;
+    }
 }
