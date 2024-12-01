@@ -48,7 +48,8 @@
     <configuration
       CMSIS_DSP="Cortex-M4 Little Endian With FPU"
       Name="Debug"
-      c_user_include_directories=".;../lib" />
+      c_user_include_directories=".;../lib"
+      debug_terminal_log_file="$(ProjectDir)/log_file/log_file" />
     <folder Name="CMSIS Files">
       <file file_name="STM32L4xx/Device/Include/stm32l4xx.h" />
       <file file_name="STM32L4xx/Device/Source/system_stm32l4xx.c">
@@ -101,6 +102,7 @@
         <file file_name="window_functions.h" />
       </folder>
       <folder Name="lib">
+        <file file_name="customZZJP.h" />
         <file file_name="STM32L432KC.h" />
         <file file_name="STM32L432KC_ADC.c" />
         <file file_name="STM32L432KC_ADC.h" />
