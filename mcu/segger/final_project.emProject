@@ -103,6 +103,8 @@
       </folder>
       <folder Name="lib">
         <file file_name="customZZJP.h" />
+        <file file_name="fft.c" />
+        <file file_name="fft.h" />
         <file file_name="STM32L432KC.h" />
         <file file_name="STM32L432KC_ADC.c" />
         <file file_name="STM32L432KC_ADC.h" />

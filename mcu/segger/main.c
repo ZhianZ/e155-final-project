@@ -22,6 +22,8 @@ Purpose : Generic application start
 #include "arm_math.h"
 #include "arm_const_structs.h"
 
+#include "fft.h"
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////  GLOBAL VARIABLES  //////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -32,6 +34,26 @@ uint16_t buffer2[BUFFER_SIZE]; // Buffer 2 for ADC data
 volatile uint32_t *DMAptr = buffer1; // Points to the buffer being filled by DMA
 volatile uint32_t *FFTptr = buffer2; // Points to the buffer ready for processing
 volatile uint8_t FFTReady = 1; // Flag indicating if FFTptr is ready for processing
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////  HELPER FUNCTIONS  //////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+void send_frequency_via_spi(float32_t frequency) {
+    uint16_t rounded_frequency = (uint16_t)roundf(frequency);
+
+    // Pull CS(PA11) low to select the FPGA 
+    digitalWrite(PA11, 0);
+
+    // Transmit the frequency as a 16-bit value
+    uint8_t high_byte = (rounded_frequency >> 8) & 0xFF;
+    uint8_t low_byte = rounded_frequency & 0xFF;
+    spiSendReceive(high_byte);
+    spiSendReceive(low_byte);
+
+    // Pull CS high to deselect the FPGA
+    digitalWrite(PA11, 1);
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////  main.c LOOP  /////////////////////////////////////////
@@ -45,67 +67,33 @@ int main(void) {
   RCC->APB1ENR1 |= RCC_APB1ENR1_TIM2EN;
   initTIM(TIM2);
 
+  //////////////////////////////  Set Up SPI  ////////////////////////////////////////
+  initSPI(1, 0, 0);
 
   ///////////////////////////////  Configure Interrupts  /////////////////////////////////////
   __enable_irq();  //Enable Interrupts Globally
   NVIC_EnableIRQ(DMA1_Channel1_IRQn);  //Enable DMA Interrupt
   NVIC_SetPriority(DMA1_Channel1_IRQn, 0);  //Set DMA as Top priority
 
-
   //////////////////////////////  Set Up DMA and ADC  ////////////////////////////////////////
   configureDMA_prototype();  //Configure DMA first
   configureADC();  //Configure ADC second
   startADC();
-  
 
   //////////////////////  Test Function (2 buffers, each 2 uint16 tall)  ///////////////////// 
 
-  uint16_t val0;
-  uint16_t val1;
-  uint16_t val2;
-  uint16_t val3;
-  uint32_t *startAbuf1 = buffer1;
-  uint32_t *startAbuf2 = buffer2;
-  uint8_t whileEntry = 1;
+  while (1) {
+        if (!FFTReady) {
+            // Calculate the frequency from FFTptr buffer
+            float32_t frequency = calculate_frequency(FFTptr);
+            printf("%.2f Hz\n",frequency);
 
-  delay_millis(TIM2, 2000);
+            // Transmit the frequency over SPI
+            send_frequency_via_spi(frequency);
 
-  while (whileEntry) {
-        
-      printf("start buffer1 \n");
-      for(int i=0; i<2048; i++){
-      printf("%d\n",buffer1[i]);
-      }
-
-      printf("start buffer2 \n");
-      for(int k=0; k<2048; k++){
-      printf("%d\n",buffer2[k]);
-      }
-      /* GET THE CURRENT ADC DATA REGISTER VALUE
-
-      testingVar = readADC();
-      // Print ADC Value
-      printf("ADC testingVar is: %d\n", testingVar);
-      */
-      
-
-      /*  GET THE FIRST TWO ENTRIES FROM EACH BUFFER
-
-      // Read ADC values from their buffers in memory
-      val0 = buffer1[0];
-      val1 = buffer1[1];
-      val2 = buffer2[0];
-      val3 = buffer2[1];
-      // Print Memory value
-      printf("Buffer1 [0] holds: %d\nBuffer1 [1] holds: %d\nBuffer2 [0] holds: %d\nBuffer2 [1] holds: %d\n", val0, val1, val2, val3);
-      */
-
-
-      // delay_millis(TIM2, 100);
-
-      whileEntry = whileEntry-1;
-  }
-
+            FFTReady = 1; // Flag indicating FFT done
+        }
+    }
   return 0;
 }
 
