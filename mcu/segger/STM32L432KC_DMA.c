@@ -160,7 +160,7 @@ void DMA1_Channel1_IRQHandler(void) {
         }
 
         // Mark FFT buffer as not ready
-        // FFTReady = 0;  TODO NEED TO ENABLE THIS FOR REAL SYSTEM TO WORK PLEASE DON'T FORGET
+        FFTReady = 0;  // TODO NEED TO ENABLE THIS FOR REAL SYSTEM TO WORK PLEASE DON'T FORGET
 
         // Update DMA memory address
         DMA1_Channel1->CMAR = (uint32_t)DMAptr;
