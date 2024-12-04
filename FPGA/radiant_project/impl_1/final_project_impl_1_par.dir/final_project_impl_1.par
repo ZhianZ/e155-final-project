@@ -1,6 +1,6 @@
 Copyright (c) 2002-2022 Lattice Semiconductor Corporation,  All rights reserved.
 
-Wed Dec  4 00:22:24 2024
+Wed Dec  4 14:19:53 2024
 
 Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -hsp m -exp parPathBased=ON \
 	final_project_impl_1_map.udb final_project_impl_1.udb 
@@ -9,7 +9,7 @@ Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -hsp m -exp parPathBased=ON \
 Level/       Number       Estimated       Timing       Estimated Worst    Timing          Run      Run
 Cost [udb]   Unrouted     Worst Slack     Score        Slack(hold)        Score(hold)     Time     Status
 ----------   --------     -----------     ------       ---------------    -----------     ----     ------
-5_1   *      0            18.732          0            0.014              0               08       Completed
+5_1   *      0            8.227           0            0.274              0               08       Completed
 
 * : Design saved.
 

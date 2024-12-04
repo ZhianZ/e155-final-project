@@ -16,7 +16,8 @@ module lcdController(
     input   logic   [7:0]   number,
     output  logic   [7:0]   d,
     output  logic   e,
-    output  logic   rs
+    output  logic   rs,
+	output logic busy_flag
     );
 
     // Create internal logic
@@ -24,8 +25,9 @@ module lcdController(
     logic rs_in;
     logic waiting;
     logic data_ready;
-    logic busy_flag;
 	logic [7:0] letter_reg, number_reg;
+    logic [4:0] cont_count;
+    logic cycle5;
     lcd_controller_statetype state, nextstate;
 
     // Call to create the lowest level control FSM
@@ -49,6 +51,15 @@ module lcdController(
         else begin                              // Otherwise, retain old values
             letter_reg <= letter_reg;
             number_reg <= number_reg; end
+
+        if (state !== nextstate) begin
+            cont_count <= 0;
+            cycle5 <= 0; end
+        else if (cont_count==5)
+            cycle5 <= 1;
+        else
+            cont_count <= cont_count + 1;
+        
     end
     
     /* I NEED TO ACCOUNT FOR CYCLES OF DELAY!!! */
@@ -60,13 +71,13 @@ module lcdController(
         case (state)
             wait_SPI:       if (new_SPI)    nextstate = clear_display;     
                             else            nextstate = wait_SPI;
-            clear_display:  if (!busy_flag) nextstate = cursor_home;
+            clear_display:  if ((!busy_flag) & (cycle5)) nextstate = cursor_home;
                             else            nextstate = clear_display;
-            cursor_home:    if (!busy_flag) nextstate = write_letter;
+            cursor_home:    if ((!busy_flag) & (cycle5)) nextstate = write_letter;
                             else            nextstate = cursor_home;
-            write_letter:   if (!busy_flag) nextstate = write_number;
+            write_letter:   if ((!busy_flag) & (cycle5)) nextstate = write_number;
                             else            nextstate = write_letter;
-            write_number:   if (!busy_flag) nextstate = wait_SPI;
+            write_number:   if ((!busy_flag) & (cycle5)) nextstate = wait_SPI;
                             else            nextstate = write_number;
             default: nextstate = wait_SPI;
         endcase
