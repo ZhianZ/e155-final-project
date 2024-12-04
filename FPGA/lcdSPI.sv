@@ -24,7 +24,7 @@ module lcdSPI(  input  logic clk,
             frequency <= raw_freq;      // Update frequency output with new value
             counter <= 0;
         end
-        if (counter==2)
+        if (counter==4)
             new_SPI <= 1;
         if (counter<10)
             counter <= counter +1;

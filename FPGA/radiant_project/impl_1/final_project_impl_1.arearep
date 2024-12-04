@@ -1,0 +1,55 @@
+----------------------------------------------------------------------
+Report for cell top.TECH
+Register bits:  89 of 5280 (1.686%)
+I/O cells:      14
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               CCU2        13          100.0
+                            FD1P3XZ        89          100.0
+                         HSOSC_CORE         1          100.0
+                                 IB         4          100.0
+                              IOL_B         1          100.0
+                               LUT4       340          100.0
+                                 OB        10          100.0
+SUB MODULES
+                          converter         1
+                      lcdController         1
+                             lcdFSM         1
+                             lcdSPI         1
+                              TOTAL       462
+----------------------------------------------------------------------
+Report for cell converter.v1
+Instance Path : converterCall
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4       150           44.1
+                              TOTAL       150
+----------------------------------------------------------------------
+Report for cell lcdSPI.v1
+Instance Path : lcdSPICall
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3XZ        38           42.7
+                              IOL_B         1          100.0
+                               LUT4        59           17.4
+                              TOTAL        98
+----------------------------------------------------------------------
+Report for cell lcdController.v1
+Instance Path : lcdControllerCall
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        13          100.0
+                            FD1P3XZ        50           56.2
+                               LUT4       130           38.2
+SUB MODULES
+                             lcdFSM         1
+                              TOTAL       194
+----------------------------------------------------------------------
+Report for cell lcdFSM.v1
+Instance Path : lcdControllerCall.lcdfsmCall
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                FA2        13          100.0
+                            FD1P3XZ        35           39.3
+                               LUT4       126           37.1
+                              TOTAL       174
