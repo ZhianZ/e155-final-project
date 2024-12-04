@@ -1,0 +1,198 @@
+m255
+K4
+z2
+!s11f vlog 2021.4 2021.10, Oct 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/jphilion/Desktop/e155_lab3/modelSim
+vconverter
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z1 !s110 1733297909
+!i10b 1
+!s100 OXhMANV=[5I]=:kJj4o452
+I]V]i0WNfa^_;Ob8UU]NUD2
+S1
+Z2 dC:/Users/jphilion/Desktop/e155-final-project/FPGA/modelsim_project
+Z3 w1733296886
+8C:/Users/jphilion/Desktop/e155-final-project/FPGA/converter.sv
+FC:/Users/jphilion/Desktop/e155-final-project/FPGA/converter.sv
+!i122 16
+L0 3 97
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OT;L;2021.4;73
+r1
+!s85 0
+31
+Z6 !s108 1733297909.000000
+!s107 C:/Users/jphilion/Desktop/e155-final-project/FPGA/converter.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jphilion/Desktop/e155-final-project/FPGA/converter.sv|
+!s101 -O0
+!i113 1
+Z7 o-work work -sv -O0
+Z8 tCvgOpt 0
+vlcdController
+R0
+DXx4 work 21 lcdController_sv_unit 0 22 e;970B:D91WUnN^>n2n5G1
+R1
+R4
+r1
+!s85 0
+!i10b 1
+!s100 Ze_P_R:i3W[h_NK3`MWoA3
+IUZI?YbN3kSzSG?N9O=Ea01
+!s105 lcdController_sv_unit
+S1
+R2
+Z9 w1733297234
+Z10 8C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdController.sv
+Z11 FC:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdController.sv
+!i122 17
+L0 11 76
+R5
+31
+R6
+Z12 !s107 C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdController.sv|
+Z13 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdController.sv|
+!s101 -O0
+!i113 1
+R7
+R8
+nlcd@controller
+XlcdController_sv_unit
+R0
+R1
+Ve;970B:D91WUnN^>n2n5G1
+r1
+!s85 0
+!i10b 1
+!s100 dMkbHQISGRAKTo0a_@o9T1
+Ie;970B:D91WUnN^>n2n5G1
+!i103 1
+S1
+R2
+R9
+R10
+R11
+!i122 17
+Z14 L0 3 0
+R5
+31
+R6
+R12
+R13
+!s101 -O0
+!i113 1
+R7
+R8
+nlcd@controller_sv_unit
+vlcdFSM
+R0
+DXx4 work 14 lcdFSM_sv_unit 0 22 NmH;]cYaHXb^CiV7_o]cl2
+Z15 !s110 1733297910
+R4
+r1
+!s85 0
+!i10b 1
+!s100 5=F=DOJoP4ckaMaH>L<zd2
+IgbSDJS86S7PdYYJm_J=Sc1
+!s105 lcdFSM_sv_unit
+S1
+R2
+Z16 w1733297905
+Z17 8C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdFSM.sv
+Z18 FC:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdFSM.sv
+!i122 18
+L0 16 193
+R5
+31
+Z19 !s108 1733297910.000000
+Z20 !s107 C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdFSM.sv|
+Z21 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdFSM.sv|
+!s101 -O0
+!i113 1
+R7
+R8
+nlcd@f@s@m
+XlcdFSM_sv_unit
+R0
+R15
+VNmH;]cYaHXb^CiV7_o]cl2
+r1
+!s85 0
+!i10b 1
+!s100 kkU<j3Rm<V7FfKn2a?=lj1
+INmH;]cYaHXb^CiV7_o]cl2
+!i103 1
+S1
+R2
+R16
+R17
+R18
+!i122 18
+R14
+R5
+31
+R19
+R20
+R21
+!s101 -O0
+!i113 1
+R7
+R8
+nlcd@f@s@m_sv_unit
+vlcdSPI
+R0
+R15
+!i10b 1
+!s100 h;WGn2Q;DS_f]VWT9XYRn3
+IAPL]ffPodjf535Oob;<H:2
+S1
+R2
+R3
+8C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdSPI.sv
+FC:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdSPI.sv
+!i122 19
+L0 3 34
+R4
+R5
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdSPI.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdSPI.sv|
+!s101 -O0
+!i113 1
+R7
+R8
+nlcd@s@p@i
+vtop
+R0
+!s125 LATTICE_CONN
+R15
+!i10b 1
+!s100 Ae2J6iZZK=9<PJ:F^SJAU3
+Il<KcP=>Vak6NzK1S7k1Jk1
+S1
+R2
+R3
+8C:/Users/jphilion/Desktop/e155-final-project/FPGA/top.sv
+FC:/Users/jphilion/Desktop/e155-final-project/FPGA/top.sv
+!i122 20
+L0 1 28
+R4
+R5
+r1
+!s85 0
+31
+R19
+!s107 C:/Users/jphilion/Desktop/e155-final-project/FPGA/top.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jphilion/Desktop/e155-final-project/FPGA/top.sv|
+!s101 -O0
+!i113 1
+R7
+R8

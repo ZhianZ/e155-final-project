@@ -25,6 +25,7 @@ module lcdController(
     logic waiting;
     logic data_ready;
     logic busy_flag;
+	logic [7:0] letter_reg, number_reg;
     lcd_controller_statetype state, nextstate;
 
     // Call to create the lowest level control FSM
@@ -42,7 +43,7 @@ module lcdController(
         if (~reset) begin      // If Reset...  (active low reset)
             letter_reg <= 8'h00;
             number_reg <= 8'h00; end
-        else if ( (new_SPI) & (waiting) ) begin // If new_SPI just went high, store new
+        else if ( (new_SPI) && (waiting) ) begin // If new_SPI just went high, store new
             letter_reg <= letter;
             number_reg <= number; end
         else begin                              // Otherwise, retain old values
@@ -62,7 +63,7 @@ module lcdController(
             clear_display:  if (!busy_flag) nextstate = cursor_home;
                             else            nextstate = clear_display;
             cursor_home:    if (!busy_flag) nextstate = write_letter;
-                            else            nextstate = cursor_home
+                            else            nextstate = cursor_home;
             write_letter:   if (!busy_flag) nextstate = write_number;
                             else            nextstate = write_letter;
             write_number:   if (!busy_flag) nextstate = wait_SPI;
