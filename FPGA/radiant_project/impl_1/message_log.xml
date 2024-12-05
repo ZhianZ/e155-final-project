@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
+    <Task name="Export">
+        <Message>
+            <ID>1081100</ID>
+            <Severity>1</Severity>
+            <Dynamic>Bitstream authenticated.</Dynamic>
+        </Message>
+    </Task>
     <Task name="Synthesis">
         <Message>
             <ID>35001786</ID>
@@ -325,12 +332,153 @@
             <Navigation>17</Navigation>
         </Message>
         <Message>
-            <ID>35901128</ID>
-            <Severity>4096</Severity>
-            <Dynamic>c:/users/jphilion/desktop/e155-final-project/fpga/lcdcontroller.sv(20): </Dynamic>
-            <Dynamic>lcd_fsm_statetype</Dynamic>
-            <Navigation>c:/users/jphilion/desktop/e155-final-project/fpga/lcdcontroller.sv</Navigation>
-            <Navigation>20</Navigation>
+            <ID>35921014</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.vhd(4): </Dynamic>
+            <Dynamic>components</Dynamic>
+            <Navigation>c:/lscc/radiant/2024.1/ip/pmi/pmi_ice40up.vhd</Navigation>
+            <Navigation>4</Navigation>
+        </Message>
+        <Message>
+            <ID>35921504</ID>
+            <Severity>1</Severity>
+            <Dynamic></Dynamic>
+            <Dynamic>C:/Users/jphilion/Desktop/e155-final-project/singleFileFPGA/radiant_project/impl_1</Dynamic>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(29): </Dynamic>
+            <Dynamic>top</Dynamic>
+            <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
+            <Navigation>29</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2024.1/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): </Dynamic>
+            <Dynamic>HSOSC</Dynamic>
+            <Navigation>C:/lscc/radiant/2024.1/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
+            <Navigation>756</Navigation>
+        </Message>
+        <Message>
+            <ID>35901209</ID>
+            <Severity>16</Severity>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(67): </Dynamic>
+            <Dynamic>32</Dynamic>
+            <Dynamic>18</Dynamic>
+            <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
+            <Navigation>67</Navigation>
+        </Message>
+        <Message>
+            <ID>35901209</ID>
+            <Severity>16</Severity>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(80): </Dynamic>
+            <Dynamic>32</Dynamic>
+            <Dynamic>24</Dynamic>
+            <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
+            <Navigation>80</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(420): </Dynamic>
+            <Dynamic>lcdSPI</Dynamic>
+            <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
+            <Navigation>420</Navigation>
+        </Message>
+        <Message>
+            <ID>35901209</ID>
+            <Severity>16</Severity>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(447): </Dynamic>
+            <Dynamic>32</Dynamic>
+            <Dynamic>5</Dynamic>
+            <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
+            <Navigation>447</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(459): </Dynamic>
+            <Dynamic>converter</Dynamic>
+            <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
+            <Navigation>459</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(112): </Dynamic>
+            <Dynamic>lcdController</Dynamic>
+            <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
+            <Navigation>112</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(201): </Dynamic>
+            <Dynamic>lcdFSM</Dynamic>
+            <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
+            <Navigation>201</Navigation>
+        </Message>
+        <Message>
+            <ID>35901209</ID>
+            <Severity>16</Severity>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(320): </Dynamic>
+            <Dynamic>32</Dynamic>
+            <Dynamic>24</Dynamic>
+            <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
+            <Navigation>320</Navigation>
+        </Message>
+        <Message>
+            <ID>35901209</ID>
+            <Severity>16</Severity>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(165): </Dynamic>
+            <Dynamic>32</Dynamic>
+            <Dynamic>5</Dynamic>
+            <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
+            <Navigation>165</Navigation>
+        </Message>
+        <Message>
+            <ID>35002028</ID>
+            <Severity>256</Severity>
+            <Dynamic>led0_P28</Dynamic>
+        </Message>
+        <Message>
+            <ID>35002028</ID>
+            <Severity>256</Severity>
+            <Dynamic>led1_P38</Dynamic>
+        </Message>
+        <Message>
+            <ID>35002028</ID>
+            <Severity>256</Severity>
+            <Dynamic>led2_P42</Dynamic>
+        </Message>
+        <Message>
+            <ID>35002028</ID>
+            <Severity>256</Severity>
+            <Dynamic>led4_PA6</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>driving \lcdControllerCall/number_reg[7:0]</Dynamic>
+            <Dynamic>7, 6, 3</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>driving \lcdControllerCall/letter_reg[7:0]</Dynamic>
+            <Dynamic>7, 4, 3</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>256</Severity>
+            <Dynamic>driving \lcdControllerCall/state_con[4:0]</Dynamic>
+            <Dynamic>4, 3</Dynamic>
+        </Message>
+        <Message>
+            <ID>35002039</ID>
+            <Severity>1</Severity>
         </Message>
     </Task>
 </BaliMessageLog>

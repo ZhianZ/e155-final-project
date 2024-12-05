@@ -1,16 +1,16 @@
-/***************************************************
+/*********************************************************************
 
-// STM32L432KC_DMA.c
+STM32L432KC_DMA.c
 
-Zhian Zhou and Jackson Philion, November 10 2024
+Jackson Philion and Zhian Zhou, December 5 2024
+jphilion@g.hmc.edu and zzhou@g.hmc.edu
 
-This file contains the DMA functions used for the E155
-final project "Fix That Note!"
+This file contains the source code for the supporting DMA functions.
+For more, see:
 
-More can be found out about the project at the report below:
+https://jacksonphilion.github.io/final-project-portfolio/ 
 
-
-***************************************************/
+*********************************************************************/
 
 #include "STM32L432KC_DMA.h"
 #include "customZZJP.h" // Includes definition of externs and defines BUFFER_SIZE

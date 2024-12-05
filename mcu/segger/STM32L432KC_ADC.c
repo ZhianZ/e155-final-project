@@ -1,5 +1,17 @@
-// STM32L432KC_ADC.h
-// Source code for ADC functions
+/*********************************************************************
+
+STM32L432KC_ADC.h
+
+Jackson Philion and Zhian Zhou, December 5 2024
+jphilion@g.hmc.edu and zzhou@g.hmc.edu
+
+Source code for ADC functions.
+For more, see:
+
+https://jacksonphilion.github.io/final-project-portfolio/ 
+
+*********************************************************************/
+
 
 #include "STM32L432KC_ADC.h"
 

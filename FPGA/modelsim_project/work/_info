@@ -8,295 +8,197 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/Users/jphilion/Desktop/e155_lab3/modelSim
+dC:/Users/jphilion/Desktop/e155-final-project/FPGA/modelsim_project
 vconverter
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1733351944
-!i10b 1
-!s100 OXhMANV=[5I]=:kJj4o452
-I]V]i0WNfa^_;Ob8UU]NUD2
-S1
-Z2 dC:/Users/jphilion/Desktop/e155-final-project/FPGA/modelsim_project
-w1733296886
-8C:/Users/jphilion/Desktop/e155-final-project/FPGA/converter.sv
-FC:/Users/jphilion/Desktop/e155-final-project/FPGA/converter.sv
-!i122 112
-L0 3 97
+Z1 DXx4 work 24 finalProject_sim_sv_unit 0 22 [1UHE]JXL886hMV^HRM@i3
+Z2 !s110 1733391726
 Z3 VDg1SIo80bB@j0V0VzS_@n1
-Z4 OT;L;2021.4;73
 r1
 !s85 0
+!i10b 1
+!s100 `Cd:jBgOH38W9IG:F7[JP3
+IAGi>9gKf@Fmann0]`[iMd3
+Z4 !s105 finalProject_sim_sv_unit
+S1
+Z5 dC:/Users/jphilion/Desktop/e155-final-project/singleFileFPGA/modelsim_project
+Z6 w1733391723
+Z7 8C:/Users/jphilion/Desktop/e155-final-project/singleFileFPGA/modelsim_project/finalProject_sim.sv
+Z8 FC:/Users/jphilion/Desktop/e155-final-project/singleFileFPGA/modelsim_project/finalProject_sim.sv
+!i122 6
+L0 481 97
+Z9 OT;L;2021.4;73
 31
-Z5 !s108 1733351944.000000
-!s107 C:/Users/jphilion/Desktop/e155-final-project/FPGA/converter.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jphilion/Desktop/e155-final-project/FPGA/converter.sv|
+Z10 !s108 1733391726.000000
+!s107 C:/Users/jphilion/Desktop/e155-final-project/singleFileFPGA/modelsim_project/finalProject_sim.sv|
+Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jphilion/Desktop/e155-final-project/singleFileFPGA/modelsim_project/finalProject_sim.sv|
 !s101 -O0
 !i113 1
-Z6 o-work work -sv -O0
-Z7 tCvgOpt 0
+Z12 o-work work -sv -O0
+Z13 tCvgOpt 0
+XfinalProject_sim_sv_unit
+R0
+R2
+V[1UHE]JXL886hMV^HRM@i3
+r1
+!s85 0
+!i10b 1
+!s100 _dcL6HimdI``Xc6[lRUhZ3
+I[1UHE]JXL886hMV^HRM@i3
+!i103 1
+S1
+R5
+R6
+R7
+R8
+!i122 6
+L0 52 0
+R9
+31
+R10
+Z14 !s107 C:/Users/jphilion/Desktop/e155-final-project/singleFileFPGA/modelsim_project/finalProject_sim.sv|
+R11
+!s101 -O0
+!i113 1
+R12
+R13
+nfinal@project_sim_sv_unit
 vlcdController
 R0
-DXx4 work 21 lcdController_sv_unit 0 22 ^n98zeZLJ_45GonFmCjKM1
 R1
+R2
 R3
 r1
 !s85 0
 !i10b 1
-!s100 Y9U>^E@XB]Z4faL4RPRAH3
-I7fUI4lIOo^:2mez05BhPl1
-!s105 lcdController_sv_unit
-S1
-R2
-Z8 w1733346970
-Z9 8C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdController.sv
-Z10 FC:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdController.sv
-!i122 113
-L0 11 87
+!s100 d8GS5N<2Fa@Hzgz77mCJ^2
+I<DTJ?:3LJ`zZT153LBK]X2
 R4
-31
+S1
 R5
-Z11 !s107 C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdController.sv|
-Z12 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdController.sv|
-!s101 -O0
-!i113 1
 R6
 R7
-nlcd@controller
-XlcdController_sv_unit
-R0
-R1
-V^n98zeZLJ_45GonFmCjKM1
-r1
-!s85 0
-!i10b 1
-!s100 PJ;kj`?edm47Q6_j2HP2o0
-I^n98zeZLJ_45GonFmCjKM1
-!i103 1
-S1
-R2
 R8
+!i122 6
+L0 134 84
 R9
-R10
-!i122 113
-Z13 L0 3 0
-R4
 31
-R5
+R10
+R14
 R11
-R12
 !s101 -O0
 !i113 1
-R6
-R7
-nlcd@controller_sv_unit
+R12
+R13
+nlcd@controller
 vlcdFSM
 R0
-Z14 DXx4 work 14 lcdFSM_sv_unit 0 22 b45a5L[C_;<:T4hK<UOM22
 R1
+R2
 R3
 r1
 !s85 0
 !i10b 1
-!s100 Di:kmI;7dc:AC>9l8_?9B0
-In30M5;OKJU:0XBg_fc=Cj2
-Z15 !s105 lcdFSM_sv_unit
-S1
-R2
-Z16 w1733351682
-Z17 8C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdFSM.sv
-Z18 FC:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdFSM.sv
-!i122 114
-L0 16 217
+!s100 1d4J83G5A>RS5_X>3g1iP0
+IG0JJ?EOG`aaFUDk:;NhOk3
 R4
-31
+S1
 R5
-Z19 !s107 C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdFSM.sv|
-Z20 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdFSM.sv|
-!s101 -O0
-!i113 1
 R6
 R7
-nlcd@f@s@m
-XlcdFSM_sv_unit
-R0
-R1
-Vb45a5L[C_;<:T4hK<UOM22
-r1
-!s85 0
-!i10b 1
-!s100 Qda6AdO]KVRd>8abAOZF02
-Ib45a5L[C_;<:T4hK<UOM22
-!i103 1
-S1
-R2
-R16
-R17
-R18
-!i122 114
-R13
-R4
+R8
+!i122 6
+L0 223 214
+R9
 31
-R5
-R19
-R20
-!s101 -O0
-!i113 1
-R6
-R7
-nlcd@f@s@m_sv_unit
-vlcdFSM_testbench
-R0
+R10
 R14
-R1
-R3
-r1
-!s85 0
-!i10b 1
-!s100 KUlKnz>11X>_zM?5PULbn3
-I7Y=fSCcEN@U^NeP;hg:>z2
-R15
-S1
-R2
-R16
-R17
-R18
-!i122 114
-L0 234 26
-R4
-31
-R5
-R19
-R20
+R11
 !s101 -O0
 !i113 1
-R6
-R7
-nlcd@f@s@m_testbench
+R12
+R13
+nlcd@f@s@m
 vlcdSPI
 R0
 R1
-!i10b 1
-!s100 OCO5^WOkag>2]=cLdF]9`3
-I_i@j`]aSf_zT>OiESYSUD3
-S1
 R2
-w1733300012
-8C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdSPI.sv
-FC:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdSPI.sv
-!i122 115
-L0 3 34
 R3
-R4
 r1
 !s85 0
-31
+!i10b 1
+!s100 :Gl9L]GSCEZ0UhfGS5DmX3
+I:8ccJ09PenDod]DJPhn>72
+R4
+S1
 R5
-!s107 C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdSPI.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jphilion/Desktop/e155-final-project/FPGA/lcdSPI.sv|
-!s101 -O0
-!i113 1
 R6
 R7
+R8
+!i122 6
+L0 442 34
+R9
+31
+R10
+R14
+R11
+!s101 -O0
+!i113 1
+R12
+R13
 nlcd@s@p@i
-vtop
-R0
-R1
-!i10b 1
-!s100 M[^P570PK]To7hRVlc`=k1
-IHi]6IgcPZbf8c>V8[<FFd3
-S1
-R2
-w1733351117
-8C:/Users/jphilion/Desktop/e155-final-project/FPGA/top.sv
-FC:/Users/jphilion/Desktop/e155-final-project/FPGA/top.sv
-!i122 116
-L0 1 51
-R3
-R4
-r1
-!s85 0
-31
-R5
-!s107 C:/Users/jphilion/Desktop/e155-final-project/FPGA/top.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jphilion/Desktop/e155-final-project/FPGA/top.sv|
-!s101 -O0
-!i113 1
-R6
-R7
 vtop_artificial
 R0
-Z21 !s125 LATTICE_CONN
 R1
-!i10b 1
-!s100 XhRkVDOZXozo_Uf`>L=[U3
-Ia:KM=N@3ESJnKUW2FPEZL1
-S1
+!s125 LATTICE_CONN
 R2
-Z22 w1733351935
-Z23 8C:/Users/jphilion/Desktop/e155-final-project/FPGA/top_sim.sv
-Z24 FC:/Users/jphilion/Desktop/e155-final-project/FPGA/top_sim.sv
-!i122 117
-Z25 L0 1 25
 R3
-R4
 r1
 !s85 0
-31
+!i10b 1
+!s100 3=2chU=I87F;]7[RbG33K2
+IMLCZVeFfKiCE_PEWeUOeS3
+R4
+S1
 R5
-Z26 !s107 C:/Users/jphilion/Desktop/e155-final-project/FPGA/top_sim.sv|
-Z27 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jphilion/Desktop/e155-final-project/FPGA/top_sim.sv|
-!s101 -O0
-!i113 1
 R6
 R7
-vtop_sim
-R0
-R21
-!s110 1733341454
-!i10b 1
-!s100 X>W_PORiKJWR]c_a6Q5CD1
-I=AMO`IcV2GJ30jQ:;4Y@72
-S1
-R2
-w1733341441
-R23
-R24
-!i122 36
-R25
-R3
-R4
-r1
-!s85 0
+R8
+!i122 6
+L0 78 51
+R9
 31
-!s108 1733341454.000000
-R26
-R27
+R10
+R14
+R11
 !s101 -O0
 !i113 1
-R6
-R7
+R12
+R13
 vtop_testbench
-R0
-R1
-!i10b 1
-!s100 7gf5D[FWWSDfO5oo=h^G23
-Id[hM;^_Q@[E1e;F2?Whk43
-S1
-R2
-R22
-R23
-R24
-!i122 117
-L0 27 49
-R3
 R4
+R1
+R0
+R2
+!i10b 1
+!s100 IKV5iIk7fDCP>AdSEP>R51
+I1gIL^3l<27j>5j>aT`dCX3
+S1
+R5
+R6
+R7
+R8
+!i122 6
+L0 1 45
+R3
+R9
 r1
 !s85 0
 31
-R5
-R26
-R27
+R10
+R14
+R11
 !s101 -O0
 !i113 1
-R6
-R7
+R12
+R13

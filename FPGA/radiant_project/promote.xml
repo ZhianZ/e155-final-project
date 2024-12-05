@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<userSetting name="C:/Users/jphilion/Desktop/e155-final-project/FPGA/radiant_project/promote.xml" version="Diamond (64-bit) 2024.1.0.34.2" date="Wed Dec 04 17:42:20 2024" vendor="Lattice Semiconductor Corporation" >
+<userSetting name="C:/Users/jphilion/Desktop/e155-final-project/singleFileFPGA/radiant_project/promote.xml" version="Diamond (64-bit) 2024.1.0.34.2" date="Thu Dec 05 01:46:19 2024" vendor="Lattice Semiconductor Corporation" >
   <msg mid="35901328" type="Info" internal="true" />
   <msg mid="35921504" type="Info" internal="true" />
   <msg mid="35901209" type="Warning" internal="true" />
-  <msg mid="35901875" type="Warning" internal="true" />
+  <msg mid="35931002" type="Warning" internal="true" />
 </userSetting>

@@ -6,8 +6,8 @@
 void configurePLL() {
    // Set clock to 80 MHz
    // Output freq = (src_clk) * (N/M) / R
-   // (4 MHz) * (80/2) * 2  = 80 MHz
-   // M: 2, N: 80, R: 
+   // (4 MHz) * (20/2) * 2  = 20 MHz
+   // M: 2, N: 20, R: 
    // Use HSI as PLLSRC
 
    RCC->CR &= ~_FLD2VAL(RCC_CR_PLLON, RCC->CR); // Turn off PLL
@@ -16,7 +16,7 @@ void configurePLL() {
    // Load configuration
    RCC->PLLCFGR |= _VAL2FLD(RCC_PLLCFGR_PLLSRC, RCC_PLLCFGR_PLLSRC_MSI);
    RCC->PLLCFGR |= _VAL2FLD(RCC_PLLCFGR_PLLM, 0b001); // M = 2
-   RCC->PLLCFGR |= _VAL2FLD(RCC_PLLCFGR_PLLN, 20);    // N = 80
+   RCC->PLLCFGR |= _VAL2FLD(RCC_PLLCFGR_PLLN, 20);    // N = 20
    RCC->PLLCFGR |= _VAL2FLD(RCC_PLLCFGR_PLLR, 0b00);  // R = 2
    RCC->PLLCFGR |= RCC_PLLCFGR_PLLREN;                // Enable PLLCLK output
 

@@ -1,28 +1,35 @@
 /*********************************************************************
-*                    SEGGER Microcontroller GmbH                     *
-*                        The Embedded Experts                        *
-**********************************************************************
 
--------------------------- END-OF-HEADER -----------------------------
+main.c
 
-File    : main.c
-Purpose : Generic application start
+Jackson Philion and Zhian Zhou, December 5 2024
+jphilion@g.hmc.edu and zzhou@g.hmc.edu
 
-*/
+This is the main.c file which runs the MCU code for our final project.
+It reads in a microphone using the ADC, uses the DMA to store that 
+data directly into one of two buffers, then uses a DMA full transfer
+interrupt to know when to process a filled buffer. It relies on the 
+CMSIS DSP library, which contains a FFT function. For more, see:
+
+https://jacksonphilion.github.io/final-project-portfolio/ 
+
+*********************************************************************/
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////  FILE INCLUSIONS  ///////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
-#include "STM32L432KC.h"
+
+#include "STM32L432KC.h"  // Our MCU library
 
 #include "customZZJP.h" // Includes declarations of global variables and defines BUFFER_SIZE
 
-#include "arm_math.h"
+#include "arm_math.h" // Required math includes for CMSIS DSP
 #include "arm_const_structs.h"
 
-#include "fft.h"
+#include "fft.h"  // Includes our full calculate FFT and SPI transaction
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////  GLOBAL VARIABLES  //////////////////////////////////////

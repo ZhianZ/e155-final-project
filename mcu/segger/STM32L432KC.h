@@ -1,5 +1,16 @@
-// STM32L432KC.h
-// Header to include all other STM32L432KC libraries.
+/*********************************************************************
+
+STM32L432KC.h
+
+Jackson Philion and Zhian Zhou, December 5 2024
+jphilion@g.hmc.edu and zzhou@g.hmc.edu
+
+Header to include all other device-specific libraries, including the
+custom ADC and modified DMA files made for our project. For more, see:
+
+https://jacksonphilion.github.io/final-project-portfolio/ 
+
+*********************************************************************/
 
 #ifndef STM32L4_H
 #define STM32L4_H
