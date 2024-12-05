@@ -10,8 +10,7 @@ typedef enum logic [4:0]    {s0_powerup,
   s17_set_f7, s18_write_f7, s19_off_f7,
   s20_set_f8, s21_write_f8, s22_off_f8,
   boot, idle,
-  set, write, off} 
-  lcd_fsm_statetype;
+  set, write, off}; lcd_fsm_statetype
 
 module lcdFSM(
     input   logic   reset,
@@ -22,7 +21,9 @@ module lcdFSM(
     output  logic   [7:0]   d,
     output  logic   e,
     output  logic   rs,
-    output  logic   busy_flag
+    output  logic   busy_flag,
+    output  lcd_fsm_statetype	state_fsm,
+    output  logic   flag_check
     );
 
   /*
@@ -103,7 +104,7 @@ module lcdFSM(
 
   ////////////////////////  Internal Logic  ////////////////////////////////////////////////
 
-  lcd_fsm_statetype state, nextstate;
+  lcd_fsm_statetype nextstate_fsm; //state_fsm is an output now
 
   logic [23:0] count;
 
@@ -116,20 +117,21 @@ module lcdFSM(
   logic flag_5ms;
   logic flag_100ms;
 
+  assign flag_check = flag_50ns;
 
   ////////////////////////  Registers  /////////////////////////////////////////////////////
   always_ff @(posedge clk) begin
 
-    // State Register
+    // state_fsm Register
     if (reset) begin    // Active low reset, so if not reset...
-      state <= nextstate;   // Update the state
+      state_fsm <= nextstate_fsm;   // Update the state_fsm
     end
     else begin          // If yes system reset...
-      state <= s0_powerup;  // Reset the State
+      state_fsm <= s0_powerup;  // Reset the state_fsm
     end
 
     // Counter Register
-    if ( (nextstate!==state) | (~reset) ) begin    // Reset counter when switching states
+    if ( (nextstate_fsm!==state_fsm) | (~reset) ) begin    // Reset counter when switching states
       count <= 24'h000000;
       flag_50ns  <= 1'b0;
       flag_250ns <= 1'b0;
@@ -153,47 +155,47 @@ module lcdFSM(
     end
   end
 
-  ////////////////////////  Next State Logic  //////////////////////////////////////////////
+  ////////////////////////  Next state_fsm Logic  //////////////////////////////////////////////
   always_comb begin
-  case (state)
+  case (state_fsm)
     // Power Up Sequence Begins
-    s0_powerup:   if (flag_100ms) nextstate = s1_set_f1;    else nextstate = s0_powerup;
-    s1_set_f1:    if (flag_50ns)  nextstate = s2_write_f1;  else nextstate = s1_set_f1;
-    s2_write_f1:  if (flag_250ns) nextstate = s3_off_f1;    else nextstate = s2_write_f1;
-    s3_off_f1:    if (flag_5ms)   nextstate = s4_write_f2;  else nextstate = s3_off_f1;
-    s4_write_f2:  if (flag_250ns) nextstate = s5_off_f2;    else nextstate = s4_write_f2;
-    s5_off_f2:    if (flag_200us) nextstate = s6_write_f3;  else nextstate = s5_off_f2;
-    s6_write_f3:  if (flag_250ns) nextstate = s7_off_f3;    else nextstate = s6_write_f3;
-    s7_off_f3:    if (flag_200us) nextstate = s8_set_f4;    else nextstate = s7_off_f3;
-    s8_set_f4:    if (flag_50ns)  nextstate = s9_write_f4;  else nextstate = s8_set_f4;
-    s9_write_f4:  if (flag_250ns) nextstate = s10_off_f4;   else nextstate = s9_write_f4;
-    s10_off_f4:   if (flag_60us)  nextstate = s11_set_f5;   else nextstate = s10_off_f4;
-    s11_set_f5:   if (flag_50ns)  nextstate = s12_write_f5; else nextstate = s11_set_f5;
-    s12_write_f5: if (flag_250ns) nextstate = s13_off_f5;   else nextstate = s12_write_f5;
-    s13_off_f5:   if (flag_60us)  nextstate = s14_set_f6;   else nextstate = s13_off_f5;
-    s14_set_f6:   if (flag_50ns)  nextstate = s15_write_f6; else nextstate = s14_set_f6;
-    s15_write_f6: if (flag_250ns) nextstate = s16_off_f6;   else nextstate = s15_write_f6;
-    s16_off_f6:   if (flag_5ms)   nextstate = s17_set_f7;   else nextstate = s16_off_f6;
-    s17_set_f7:   if (flag_50ns)  nextstate = s18_write_f7; else nextstate = s17_set_f7;
-    s18_write_f7: if (flag_250ns) nextstate = s19_off_f7;   else nextstate = s18_write_f7;
-    s19_off_f7:   if (flag_60us)  nextstate = s20_set_f8;   else nextstate = s19_off_f7;
-    s20_set_f8:   if (flag_50ns)  nextstate = s21_write_f8; else nextstate = s20_set_f8;
-    s21_write_f8: if (flag_250ns) nextstate = s22_off_f8;   else nextstate = s21_write_f8;
-    s22_off_f8:   if (flag_60us)  nextstate = boot;         else nextstate = s22_off_f8;
+    s0_powerup:   if (flag_100ms) nextstate_fsm = s1_set_f1;    else nextstate_fsm = s0_powerup;
+    s1_set_f1:    if (flag_50ns)  nextstate_fsm = s2_write_f1;  else nextstate_fsm = s1_set_f1;
+    s2_write_f1:  if (flag_250ns) nextstate_fsm = s3_off_f1;    else nextstate_fsm = s2_write_f1;
+    s3_off_f1:    if (flag_5ms)   nextstate_fsm = s4_write_f2;  else nextstate_fsm = s3_off_f1;
+    s4_write_f2:  if (flag_250ns) nextstate_fsm = s5_off_f2;    else nextstate_fsm = s4_write_f2;
+    s5_off_f2:    if (flag_200us) nextstate_fsm = s6_write_f3;  else nextstate_fsm = s5_off_f2;
+    s6_write_f3:  if (flag_250ns) nextstate_fsm = s7_off_f3;    else nextstate_fsm = s6_write_f3;
+    s7_off_f3:    if (flag_200us) nextstate_fsm = s8_set_f4;    else nextstate_fsm = s7_off_f3;
+    s8_set_f4:    if (flag_50ns)  nextstate_fsm = s9_write_f4;  else nextstate_fsm = s8_set_f4;
+    s9_write_f4:  if (flag_250ns) nextstate_fsm = s10_off_f4;   else nextstate_fsm = s9_write_f4;
+    s10_off_f4:   if (flag_60us)  nextstate_fsm = s11_set_f5;   else nextstate_fsm = s10_off_f4;
+    s11_set_f5:   if (flag_50ns)  nextstate_fsm = s12_write_f5; else nextstate_fsm = s11_set_f5;
+    s12_write_f5: if (flag_250ns) nextstate_fsm = s13_off_f5;   else nextstate_fsm = s12_write_f5;
+    s13_off_f5:   if (flag_60us)  nextstate_fsm = s14_set_f6;   else nextstate_fsm = s13_off_f5;
+    s14_set_f6:   if (flag_50ns)  nextstate_fsm = s15_write_f6; else nextstate_fsm = s14_set_f6;
+    s15_write_f6: if (flag_250ns) nextstate_fsm = s16_off_f6;   else nextstate_fsm = s15_write_f6;
+    s16_off_f6:   if (flag_5ms)   nextstate_fsm = s17_set_f7;   else nextstate_fsm = s16_off_f6;
+    s17_set_f7:   if (flag_50ns)  nextstate_fsm = s18_write_f7; else nextstate_fsm = s17_set_f7;
+    s18_write_f7: if (flag_250ns) nextstate_fsm = s19_off_f7;   else nextstate_fsm = s18_write_f7;
+    s19_off_f7:   if (flag_60us)  nextstate_fsm = s20_set_f8;   else nextstate_fsm = s19_off_f7;
+    s20_set_f8:   if (flag_50ns)  nextstate_fsm = s21_write_f8; else nextstate_fsm = s20_set_f8;
+    s21_write_f8: if (flag_250ns) nextstate_fsm = s22_off_f8;   else nextstate_fsm = s21_write_f8;
+    s22_off_f8:   if (flag_60us)  nextstate_fsm = boot;         else nextstate_fsm = s22_off_f8;
 
-    boot:   if (flag_50ns)  nextstate = idle;   else nextstate = boot;
-    idle:   if (data_ready) nextstate = set;    else nextstate = idle;
-    set:    if (flag_50ns)  nextstate = write;  else nextstate = set;
-    write:  if (flag_250ns) nextstate = off;    else nextstate = write;
-    off:    if (flag_60us)  nextstate = boot;   else nextstate = off;
+    boot:   if (flag_50ns)  nextstate_fsm = idle;   else nextstate_fsm = boot;
+    idle:   if (data_ready) nextstate_fsm = set;    else nextstate_fsm = idle;
+    set:    if (flag_50ns)  nextstate_fsm = write;  else nextstate_fsm = set;
+    write:  if (flag_250ns) nextstate_fsm = off;    else nextstate_fsm = write;
+    off:    if (flag_60us)  nextstate_fsm = boot;   else nextstate_fsm = off;
 
-    default: nextstate = s0_powerup;
+    default: nextstate_fsm = s0_powerup;
   endcase
   end
 
   ////////////////////////  Output Logic  //////////////////////////////////////////////////
   always_comb begin
-  case (state)
+  case (state_fsm)
     // Power Up Sequence Begins
     s0_powerup:   begin e=0; rs=0; busy_flag=1; d=8'h00; end
     s1_set_f1:    begin e=0; rs=0; busy_flag=1; d=`DF1; end
