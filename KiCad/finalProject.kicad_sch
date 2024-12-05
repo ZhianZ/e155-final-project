@@ -921,6 +921,161 @@
 				)
 			)
 		)
+		(symbol "Switch:SW_DIP_x01"
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 0 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SW_DIP_x01"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "dip switch"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SW?DIP?x1*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_DIP_x01_0_0"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 0.127) (xy 2.3622 1.1684)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SW_DIP_x01_0_1"
+				(rectangle
+					(start -3.81 2.54)
+					(end 3.81 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "SW_DIP_x01_1_1"
+				(pin passive line
+					(at -7.62 0 0)
+					(length 5.08)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 5.08)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers hide)
@@ -1077,6 +1232,10 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "dbec8a02-6984-466e-881e-d96bdfc9a370")
+	)
+	(no_connect
+		(at 31.75 66.04)
+		(uuid "954ccd8e-6777-46bc-b7f6-d52348ec1ef1")
 	)
 	(wire
 		(pts
@@ -1287,6 +1446,16 @@
 			(type default)
 		)
 		(uuid "2382a88d-8a4d-4eb0-9381-b6a6232ed4a0")
+	)
+	(wire
+		(pts
+			(xy 90.17 93.98) (xy 90.17 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "256bbcd3-26a1-4f99-8aab-bdd807eaafcd")
 	)
 	(wire
 		(pts
@@ -1507,6 +1676,16 @@
 			(type default)
 		)
 		(uuid "6af2e2d8-54e5-4229-ab4b-eca5d8413044")
+	)
+	(wire
+		(pts
+			(xy 58.42 93.98) (xy 58.42 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6be09e88-dd27-411a-88ff-a0d3d719891f")
 	)
 	(wire
 		(pts
@@ -1750,6 +1929,16 @@
 	)
 	(wire
 		(pts
+			(xy 74.93 93.98) (xy 58.42 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8ec4d1f-b9aa-4770-923a-adbde29cdd5b")
+	)
+	(wire
+		(pts
 			(xy 129.54 34.29) (xy 129.54 41.91)
 		)
 		(stroke
@@ -1830,7 +2019,7 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 66.04) (xy 39.37 66.04)
+			(xy 31.75 66.04) (xy 39.37 66.04)
 		)
 		(stroke
 			(width 0)
@@ -2546,7 +2735,7 @@
 		)
 		(uuid "5473ed05-a802-4cf9-bf44-f1cca57873a9")
 	)
-	(label "SCK"
+	(label "SCLK"
 		(at 26.67 60.96 0)
 		(fields_autoplaced yes)
 		(effects
@@ -2578,6 +2767,17 @@
 			(justify left bottom)
 		)
 		(uuid "58d073ce-9445-49dc-8dc5-53fc88f2130a")
+	)
+	(label "P34"
+		(at 58.42 88.9 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5b9215ea-c719-4a8d-85b6-52b0a5ffa729")
 	)
 	(label "d6"
 		(at 72.39 63.5 0)
@@ -2677,17 +2877,6 @@
 			(justify left bottom)
 		)
 		(uuid "734e521b-4d8c-45e2-a026-b552a8dd729d")
-	)
-	(label "CIPO"
-		(at 26.67 66.04 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "7a275939-5d23-4e86-b654-1108fcf2b086")
 	)
 	(label "GND"
 		(at 60.96 50.8 0)
@@ -2820,6 +3009,17 @@
 			(justify left bottom)
 		)
 		(uuid "96bea1bd-a45c-456f-a1d1-b95ab386b3f7")
+	)
+	(label "reset"
+		(at 60.96 93.98 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9870d494-c2dc-410a-b0e3-486f13ae16fe")
 	)
 	(label "d1"
 		(at 125.73 41.91 0)
@@ -4401,6 +4601,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 82.55 93.98 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "94668c39-455c-471f-8ed3-a1c43e86e275")
+		(property "Reference" "SW1"
+			(at 82.55 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 82.55 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 82.55 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 82.55 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 82.55 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "8bc9e978-97da-4e26-aaf3-07d056a3f937")
+		)
+		(pin "1"
+			(uuid "b6558689-fdca-41cc-89e7-f75fce34e8bb")
+		)
+		(instances
+			(project ""
+				(path "/86aea3a1-09bf-48eb-af77-bb5f50a3b6b5"
+					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_US")
 		(at 139.7 165.1 0)
 		(unit 1)
@@ -4823,6 +5091,72 @@
 			(project ""
 				(path "/86aea3a1-09bf-48eb-af77-bb5f50a3b6b5"
 					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 90.17 95.25 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ba309dc4-33d2-4c34-8355-4c46e0a62d85")
+		(property "Reference" "#PWR012"
+			(at 90.17 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 90.17 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 90.17 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 90.17 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 90.17 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5b7b4f8d-006a-43c3-a64d-418ea54fec83")
+		)
+		(instances
+			(project ""
+				(path "/86aea3a1-09bf-48eb-af77-bb5f50a3b6b5"
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
