@@ -4,7 +4,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Wed Dec  4 21:51:10 2024
+Thu Dec  5 01:46:16 2024
 
 
 Command: bitgen -w -gui -msgset C:/Users/jphilion/Desktop/e155-final-project/singleFileFPGA/radiant_project/promote.xml -freq 0 single_final_project_impl_1.udb C:/Users/jphilion/Desktop/e155-final-project/singleFileFPGA/radiant_project/impl_1/single_final_project_impl_1 
@@ -22,4 +22,5 @@ Preference Summary:
 
 Creating bit map...
 Saving bit stream in "C:/Users/jphilion/Desktop/e155-final-project/singleFileFPGA/radiant_project/impl_1/single_final_project_impl_1.bin".
+INFO <1081100> - Bitstream authenticated.
 Bitstream generation complete!

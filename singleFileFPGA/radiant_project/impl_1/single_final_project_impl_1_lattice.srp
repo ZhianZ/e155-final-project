@@ -5,7 +5,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Wed Dec  4 21:48:30 2024
+Thu Dec  5 01:45:53 2024
 
 
 Command Line:  C:\lscc\radiant\2024.1\ispfpga\bin\nt64\synthesis.exe -f single_final_project_impl_1_lattice.synproj -logfile single_final_project_impl_1_lattice.srp -gui -msgset C:/Users/jphilion/Desktop/e155-final-project/singleFileFPGA/radiant_project/promote.xml 
@@ -135,14 +135,14 @@ Top module name (Verilog, mixed language): top
 INFO <35901018> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(29): compiling module top. VERI-1018
 INFO <35901018> - synthesis: C:/lscc/radiant/2024.1/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC. VERI-1018
 WARNING <35901209> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(67): expression size 32 truncated to fit in target size 18. VERI-1209
-WARNING <35901209> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(77): expression size 32 truncated to fit in target size 24. VERI-1209
-INFO <35901018> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(434): compiling module lcdSPI. VERI-1018
-WARNING <35901209> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(461): expression size 32 truncated to fit in target size 5. VERI-1209
-INFO <35901018> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(473): compiling module converter. VERI-1018
-INFO <35901018> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(113): compiling module lcdController. VERI-1018
-INFO <35901018> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(202): compiling module lcdFSM. VERI-1018
-WARNING <35901209> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(334): expression size 32 truncated to fit in target size 24. VERI-1209
-WARNING <35901209> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(166): expression size 32 truncated to fit in target size 5. VERI-1209
+WARNING <35901209> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(80): expression size 32 truncated to fit in target size 24. VERI-1209
+INFO <35901018> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(420): compiling module lcdSPI. VERI-1018
+WARNING <35901209> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(447): expression size 32 truncated to fit in target size 5. VERI-1209
+INFO <35901018> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(459): compiling module converter. VERI-1018
+INFO <35901018> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(112): compiling module lcdController. VERI-1018
+INFO <35901018> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(201): compiling module lcdFSM. VERI-1018
+WARNING <35901209> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(320): expression size 32 truncated to fit in target size 24. VERI-1209
+WARNING <35901209> - synthesis: c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(165): expression size 32 truncated to fit in target size 5. VERI-1209
                                                          
 
 
@@ -184,13 +184,13 @@ CRITICAL <35001747> - synthesis: Bit(s) of register driving \lcdControllerCall/s
 INFO <35002039> - synthesis: Special Primitives IFD1P3AZ and OFD1P3AZ for ThunderPlus are synthesized using IOL_B.
 
 ################### Begin Area Report (top)######################
-Number of register bits => 136 of 5280 (2 % )
-CCU2 => 36
-FD1P3XZ => 136
+Number of register bits => 128 of 5280 (2 % )
+CCU2 => 32
+FD1P3XZ => 128
 HSOSC_CORE => 1
 IB => 4
 IOL_B => 1
-LUT4 => 352
+LUT4 => 361
 OB => 19
 ################### End Area Report ##################
 Number of odd-length carry chains : 0
@@ -206,16 +206,16 @@ Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : lcdControllerCall/lcdfsmCall/state_fsm[2], loads : 35
-  Net : lcdControllerCall/lcdfsmCall/state_fsm[1], loads : 33
-  Net : lcdControllerCall/lcdfsmCall/state_fsm[0], loads : 33
+  Net : lcdControllerCall/lcdfsmCall/state_fsm[1], loads : 32
+  Net : lcdControllerCall/lcdfsmCall/state_fsm[0], loads : 31
+  Net : lcdControllerCall/lcdfsmCall/state_fsm[2], loads : 30
   Net : lcdControllerCall/lcdfsmCall/n11, loads : 30
-  Net : lcdSPICall/frequency[8], loads : 25
   Net : n81, loads : 24
+  Net : lcdControllerCall/lcdfsmCall/state_fsm[4], loads : 22
   Net : lcdControllerCall/lcdfsmCall/state_fsm[3], loads : 22
-  Net : lcdSPICall/frequency[6], loads : 22
-  Net : lcdControllerCall/lcdfsmCall/state_fsm[4], loads : 21
-  Net : clk_counter[17], loads : 20
+  Net : lcdSPICall/frequency[7], loads : 21
+  Net : lcdSPICall/frequency[6], loads : 21
+  Net : lcdSPICall/frequency[5], loads : 21
 ################### End Clock Report ##################
 
 ################### Begin Constraint Report ######################
@@ -228,10 +228,10 @@ Constraint Summary:
 Total number of design rule violations: 0
 ###################  End DRC Report  ######################
 
-Peak Memory Usage: 103 MB
+Peak Memory Usage: 106 MB
 
 --------------------------------------------------------------
 Total CPU Time: 1 secs 
 Total REAL Time: 2 secs 
 --------------------------------------------------------------
-Checksum -- synthesis -- netlist: a8b9f376347c0df8ef7e656d973a3bdbf7bb73d
+Checksum -- synthesis -- netlist: 75879b9bdce0c098fb81f16c35faea05a0e7d655

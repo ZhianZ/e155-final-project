@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
+    <Task name="Export">
+        <Message>
+            <ID>1081100</ID>
+            <Severity>1</Severity>
+            <Dynamic>Bitstream authenticated.</Dynamic>
+        </Message>
+    </Task>
     <Task name="Synthesis">
         <Message>
             <ID>35001786</ID>
@@ -366,70 +373,70 @@
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(77): </Dynamic>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(80): </Dynamic>
             <Dynamic>32</Dynamic>
             <Dynamic>24</Dynamic>
             <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
-            <Navigation>77</Navigation>
+            <Navigation>80</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(434): </Dynamic>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(420): </Dynamic>
             <Dynamic>lcdSPI</Dynamic>
             <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
-            <Navigation>434</Navigation>
+            <Navigation>420</Navigation>
         </Message>
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(461): </Dynamic>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(447): </Dynamic>
             <Dynamic>32</Dynamic>
             <Dynamic>5</Dynamic>
             <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
-            <Navigation>461</Navigation>
+            <Navigation>447</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(473): </Dynamic>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(459): </Dynamic>
             <Dynamic>converter</Dynamic>
             <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
-            <Navigation>473</Navigation>
+            <Navigation>459</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(113): </Dynamic>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(112): </Dynamic>
             <Dynamic>lcdController</Dynamic>
             <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
-            <Navigation>113</Navigation>
+            <Navigation>112</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(202): </Dynamic>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(201): </Dynamic>
             <Dynamic>lcdFSM</Dynamic>
             <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
-            <Navigation>202</Navigation>
+            <Navigation>201</Navigation>
         </Message>
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(334): </Dynamic>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(320): </Dynamic>
             <Dynamic>32</Dynamic>
             <Dynamic>24</Dynamic>
             <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
-            <Navigation>334</Navigation>
+            <Navigation>320</Navigation>
         </Message>
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(166): </Dynamic>
+            <Dynamic>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv(165): </Dynamic>
             <Dynamic>32</Dynamic>
             <Dynamic>5</Dynamic>
             <Navigation>c:/users/jphilion/desktop/e155-final-project/singlefilefpga/finalproject.sv</Navigation>
-            <Navigation>166</Navigation>
+            <Navigation>165</Navigation>
         </Message>
         <Message>
             <ID>35002028</ID>
