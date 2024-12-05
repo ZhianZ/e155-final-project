@@ -1,0 +1,55 @@
+---------------------------------------------------
+Report for cell top
+   Instance path: top
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                 IOLGC	       1.00        100.0
+                                  LUT4	        461        100.0
+                               LUTGATE	        397        100.0
+                                LUTCCU	         64        100.0
+                                 IOREG	          1        100.0
+                                 IOBUF	         23        100.0
+                                PFUREG	        128        100.0
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+                             converter	          1        38.6
+                         lcdController	          1        36.4
+                                lcdSPI	          1         4.3
+---------------------------------------------------
+Report for cell lcdController
+   Instance path: top/lcdControllerCall
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	        168        36.4
+                               LUTGATE	        142        35.8
+                                LUTCCU	         26        40.6
+                                PFUREG	         54        42.2
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+                                lcdFSM	          1        31.2
+---------------------------------------------------
+Report for cell lcdFSM
+   Instance path: top/lcdControllerCall/lcdfsmCall
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	        144        31.2
+                               LUTGATE	        118        29.7
+                                LUTCCU	         26        40.6
+                                PFUREG	         35        27.3
+---------------------------------------------------
+Report for cell converter
+   Instance path: top/converterCall
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	        178        38.6
+                               LUTGATE	        178        44.8
+---------------------------------------------------
+Report for cell lcdSPI
+   Instance path: top/lcdSPICall
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                 IOLGC	       1.00        100.0
+                                  LUT4	         20         4.3
+                               LUTGATE	         20         5.0
+                                 IOREG	          1        100.0
+                                PFUREG	         38        29.7
