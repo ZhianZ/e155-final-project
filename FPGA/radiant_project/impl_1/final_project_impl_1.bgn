@@ -4,7 +4,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Wed Dec  4 00:24:55 2024
+Wed Dec  4 14:20:06 2024
 
 
 Command: bitgen -w -gui -msgset C:/Users/jphilion/Desktop/e155-final-project/FPGA/radiant_project/promote.xml -freq 0 final_project_impl_1.udb C:/Users/jphilion/Desktop/e155-final-project/FPGA/radiant_project/impl_1/final_project_impl_1 

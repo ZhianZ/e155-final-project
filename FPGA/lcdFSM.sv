@@ -65,9 +65,9 @@ module lcdFSM(
   parameter integer D_5ms   = 240000;    // 0.005000000 * CLK_FREQ
   parameter integer D_100ms = 4800000;    // 0.100000000 * CLK_FREQ*/
 
-  /* Current divided clock frequency is 24 MHz. Flag Values are rounded up. */
-  parameter integer D_50ns  = 2;    // 0.000000050 * CLK_FREQ
-  parameter integer D_250ns = 6;    // 0.000000250 * CLK_FREQ
+  /* Current divided clock frequency is 24 MHz. Flag Values are rounded up.
+  parameter integer D_50ns  = 3;    // 0.000000050 * CLK_FREQ
+  parameter integer D_250ns = 12;    // 0.000000250 * CLK_FREQ
 
   parameter integer D_40us  = 960;    // 0.000040000 * CLK_FREQ
   parameter integer D_60us  = 1440;    // 0.000060000 * CLK_FREQ
@@ -75,7 +75,19 @@ module lcdFSM(
 
   parameter integer D_2ms   = 48000;    // 0.002000000 * CLK_FREQ
   parameter integer D_5ms   = 120000;    // 0.005000000 * CLK_FREQ
-  parameter integer D_100ms = 2400000;    // 0.100000000 * CLK_FREQ
+  parameter integer D_100ms = 2400000;    // 0.100000000 * CLK_FREQ */
+
+  /* Simulation and FSM test values -- will not work with display! */
+  parameter integer D_50ns  = 30;    // 0.000000050 * CLK_FREQ
+  parameter integer D_250ns = 30;    // 0.000000250 * CLK_FREQ
+
+  parameter integer D_40us  = 30;    // 0.000040000 * CLK_FREQ
+  parameter integer D_60us  = 30;    // 0.000060000 * CLK_FREQ
+  parameter integer D_200us = 30;    // 0.000200000 * CLK_FREQ
+
+  parameter integer D_2ms   = 30;    // 0.002000000 * CLK_FREQ
+  parameter integer D_5ms   = 30;    // 0.005000000 * CLK_FREQ
+  parameter integer D_100ms = 30;    // 0.100000000 * CLK_FREQ
 
   ////////////////////////  Function Definitions  //////////////////////////////////////////
 
@@ -167,7 +179,7 @@ module lcdFSM(
     s19_off_f7:   if (flag_60us)  nextstate = s20_set_f8;   else nextstate = s19_off_f7;
     s20_set_f8:   if (flag_50ns)  nextstate = s21_write_f8; else nextstate = s20_set_f8;
     s21_write_f8: if (flag_250ns) nextstate = s22_off_f8;   else nextstate = s21_write_f8;
-    s22_off_f8:   if (flag_60us)  nextstate = idle;         else nextstate = s22_off_f8;
+    s22_off_f8:   if (flag_60us)  nextstate = boot;         else nextstate = s22_off_f8;
 
     boot:   if (flag_50ns)  nextstate = idle;   else nextstate = boot;
     idle:   if (data_ready) nextstate = set;    else nextstate = idle;
@@ -216,5 +228,32 @@ module lcdFSM(
     default: begin e=0; rs=0; busy_flag=1; d=8'h00; end
   endcase
   end
+
+endmodule
+
+module lcdFSM_testbench();
+
+    // Create necessary variables
+  logic   reset;
+  logic   clk;
+  logic   data_ready;
+  logic   [7:0]   d_in;
+  logic   rs_in;
+  logic   [7:0]   d;
+  logic   e;
+  logic   rs;
+  logic   busy_flag;
+
+  // Call DUT module
+  lcdFSM dut(reset,clk,data_ready,d_in,rs_in,d,e,rs,busy_flag);
+
+  // Clock cycle and pulse reset (recall active low)
+  always begin clk = 1; #5; clk=0; #5; end
+  initial begin reset=1; end
+
+  /* // Feed in the desired signals. 
+  initial begin 
+	  sense = 4'b0000; #53; sense = 4'b0010; #150; sense = 4'b0000;
+  end*/
 
 endmodule

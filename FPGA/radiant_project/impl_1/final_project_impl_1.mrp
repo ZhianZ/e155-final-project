@@ -8,7 +8,7 @@ Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.1.0.34.2
-Mapped on: Wed Dec  4 00:22:20 2024
+Mapped on: Wed Dec  4 14:19:49 2024
 
 Design Information
 ------------------
@@ -22,21 +22,22 @@ Command line:   map -pdc C:/Users/jphilion/Desktop/e155-final-project/FPGA/radia
 Design Summary
 --------------
 
-   Number of slice registers:  89 out of  5280 (2%)
+   Number of slice registers: 118 out of  5280 (2%)
    Number of I/O registers:      1 out of   117 (1%)
-   Number of LUT4s:           404 out of  5280 (8%)
-      Number of logic LUT4s:             341
-      Number of inserted feedthru LUT4s:  37
-      Number of ripple logic:             13 (26 LUT4s)
-   Number of IO sites used:   14 out of 39 (36%)
-      Number of IO sites used for general PIO: 14
+   Number of LUT4s:           433 out of  5280 (8%)
+      Number of logic LUT4s:             346
+      Number of inserted feedthru LUT4s:  34
+      Number of replicated LUT4s:          1
+      Number of ripple logic:             26 (52 LUT4s)
+   Number of IO sites used:   16 out of 39 (41%)
+      Number of IO sites used for general PIO: 16
       Number of IO sites used for I3C: 0 out of 2 (0%)
       (note: If I3C is not used, its site can be used as general PIO)
-      Number of IO sites used for PIO+I3C: 14 out of 36 (39%)
+      Number of IO sites used for PIO+I3C: 16 out of 36 (44%)
       Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
       (note: If RGB LED drivers are not used, sites can be used as OD outputs,
        see TN1288 iCE40 LED Driver Usage Guide)
-      Number of IO sites used for PIO+I3C+OD+RGB: 14 out of 39 (36%)
+      Number of IO sites used for PIO+I3C+OD+RGB: 16 out of 39 (41%)
    Number of DSPs:             0 out of 8 (0%)
    Number of I2Cs:             0 out of 2 (0%)
    Number of High Speed OSCs:  1 out of 1 (100%)
@@ -50,16 +51,15 @@ Design Summary
    Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             0 out of 1 (0%)
    Number of Clocks:  3
-      Net int_osc: 1 loads, 1 rising, 0 falling (Driver: Pin hf_osc/CLKHF)
-      Net clk: 62 loads, 62 rising, 0 falling (Driver: Pin clk_c/Q)
+      Net int_osc: 15 loads, 15 rising, 0 falling (Driver: Pin hf_osc/CLKHF)
+      Net clk: 66 loads, 66 rising, 0 falling (Driver: Pin clk_c/Q)
       Net sclk_c: 16 loads, 16 rising, 0 falling (Driver: Port sclk)
    Number of Clock Enables:  5
       Net VCC_net: 1 loads, 0 SLICEs
-      Net n2863: 3 loads, 3 SLICEs
-      Net n1469: 9 loads, 9 SLICEs
+      Net lcdControllerCall.n1681: 9 loads, 9 SLICEs
+      Net lcdControllerCall.n1686: 4 loads, 4 SLICEs
       Net lcdSPICall.n22: 16 loads, 16 SLICEs
-      Net lcdSPICall.n2804: 5 loads, 5 SLICEs
-   Number of LSRs:  3
+      Net lcdSPICall.n3296: 5 loads, 5 SLICEs
 
                                     Page 1
 
@@ -69,20 +69,23 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net lcdSPICall.n2824: 5 loads, 5 SLICEs
-      Net lcdControllerCall.n20: 14 loads, 14 SLICEs
+   Number of LSRs:  5
+      Net n7: 13 loads, 13 SLICEs
+      Net lcdControllerCall.n1698: 5 loads, 5 SLICEs
+      Net lcdControllerCall.n6: 9 loads, 9 SLICEs
       Net lcdControllerCall.lcdfsmCall.n11: 13 loads, 13 SLICEs
+      Net lcdSPICall.n3306: 5 loads, 5 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net lcdControllerCall.lcdfsmCall.state[0]: 36 loads
-      Net lcdControllerCall.lcdfsmCall.state[1]: 30 loads
-      Net lcdControllerCall.lcdfsmCall.state[2]_2: 30 loads
-      Net frequency[4]: 28 loads
-      Net frequency[6]: 27 loads
-      Net frequency[5]: 26 loads
+      Net lcdControllerCall.lcdfsmCall.state[0]_2: 29 loads
+      Net lcdControllerCall.lcdfsmCall.state[1]_2: 28 loads
+      Net frequency[5]: 27 loads
+      Net lcdControllerCall.lcdfsmCall.state[2]_2: 27 loads
       Net frequency[8]: 26 loads
-      Net lcdControllerCall.lcdfsmCall.state[3]: 25 loads
+      Net lcdControllerCall.lcdfsmCall.state[3]: 26 loads
+      Net frequency[6]: 25 loads
+      Net frequency[4]: 23 loads
       Net frequency[7]: 22 loads
-      Net state_adj_164[4]: 21 loads
+      Net lcdControllerCall.state_adj_164[4]: 21 loads
 
 
 
@@ -104,11 +107,13 @@ IO (PIO) Attributes
 | IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
 |                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| d[6]                | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
 | d[5]                | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
+| d[6]                | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
 | d[7]                | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| d[4]                | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | sdi                 | INPUT     |           | I     |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
@@ -118,15 +123,10 @@ IO (PIO) Attributes
 +---------------------+-----------+-----------+-------+-------+-----------+
 | reset               | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| rs                  | OUTPUT    |           |       |       |           |
+| ledIDLE             | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| e                   | OUTPUT    |           |       |       |           |
+| ledCLK              | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| d[0]                | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| d[1]                | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| d[2]                | OUTPUT    |           |       |       |           |
 
                                     Page 2
 
@@ -136,10 +136,17 @@ IO (PIO) Attributes
 
 IO (PIO) Attributes (cont)
 --------------------------
+| rs                  | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| e                   | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| d[0]                | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| d[1]                | OUTPUT    |           |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| d[2]                | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | d[3]                | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| d[4]                | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
 OSC Summary
@@ -163,7 +170,7 @@ Instance Name: lcdSPICall/raw_freq_i0
 Constraint Summary
 ------------------
 
-   Total number of constraints: 15
+   Total number of constraints: 17
    Total number of constraints dropped: 0
 
 Run Time and Memory Usage
@@ -172,14 +179,7 @@ Run Time and Memory Usage
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
    Peak Memory Usage: 69 MB
-Checksum -- map: d5e5777dc5eee64e37d561ebad252c4040acf2ff
-
-
-
-
-
-
-
+Checksum -- map: 2f826fc35daf65f2dab8ab61953b8fe78bc3ba7b
 
 
 

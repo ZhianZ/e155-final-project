@@ -1,17 +1,3 @@
 DRC: Design Rule Check Radiant Software (64-bit) 2024.1.0.34.2
-Tue Dec  3 23:48:43 2024
+Wed Dec  4 13:05:26 2024
 
-WARNING <71003020> - Top module port 'reset' does not connect to anything.
-WARNING <71003020> - Top module port 'sclk' does not connect to anything.
-WARNING <71003020> - Top module port 'cs' does not connect to anything.
-WARNING <71003020> - Top module port 'sdi' does not connect to anything.
-WARNING <71003020> - Top module port 'd[7]' does not connect to anything.
-WARNING <71003020> - Top module port 'd[6]' does not connect to anything.
-WARNING <71003020> - Top module port 'd[5]' does not connect to anything.
-WARNING <71003020> - Top module port 'd[4]' does not connect to anything.
-WARNING <71003020> - Top module port 'd[3]' does not connect to anything.
-WARNING <71003020> - Top module port 'd[2]' does not connect to anything.
-WARNING <71003020> - Top module port 'd[1]' does not connect to anything.
-WARNING <71003020> - Top module port 'd[0]' does not connect to anything.
-WARNING <71003020> - Top module port 'e' does not connect to anything.
-WARNING <71003020> - Top module port 'rs' does not connect to anything.
