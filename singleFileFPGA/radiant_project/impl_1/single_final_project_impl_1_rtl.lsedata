@@ -2,8 +2,8 @@
 
 <clocks>
     <clockitem name = "sclk"  type = "port" />
-    <clockitem name = "int_osc"  type = "net" />
     <clockitem name = "clk"  type = "net" />
+    <clockitem name = "int_osc"  type = "net" />
 </clocks>
 
 <!--

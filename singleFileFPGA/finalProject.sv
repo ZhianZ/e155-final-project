@@ -58,13 +58,16 @@ module top(
     // Initialize High Frequency 48MHz Oscillator as clk signal, divide down to 24 MHz
     logic clk, int_osc;
 	logic [17:0] clk_counter;
-    HSOSC hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
+    HSOSC hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));		//TERMED FOR REMOVAL
 	always_ff @(posedge int_osc)
-		if (clk_counter[17]) begin
+		if (clk_counter[9]) begin	// 1 clock cycle just over every 10 us.
 			clk <= ~clk;
 			clk_counter <= 0; end
 		else
-			clk_counter <= clk_counter + 1;
+			clk_counter <= clk_counter + 1; 
+	
+	/*always_ff @(posedge int_osc)
+		clk <= ~clk;*/
 	
 	///////////////////////////////////////  DEBUGGING LOGIC  //////////////////////////////////////////
 	logic debug_clk;
@@ -77,11 +80,7 @@ module top(
 			debug_counter <= debug_counter + 1;
 	end
 		
-    //assign led_PA10 = ;
-    //assign led0_P28 = ;
-    //assign led1_P38 = ;
-    //assign led2_P42 = ;
-    //assign led4_PA6 = ;
+	//assign led0_P28 = new_SPI;
     assign led5_PA9 = debug_clk;
 	assign led6_PA10 = (state_fsm==idle);
 
@@ -171,7 +170,7 @@ module lcdController(
     ////////////////////////  Controller Next State Logic  /////////////////////
     always_comb
         case (state_con)
-            wait_SPI:       if (new_SPI)    nextstate_con = clear_display;     
+            wait_SPI:       if ( (state_fsm==idle) & (new_SPI) )    nextstate_con = clear_display;     
                             else            nextstate_con = wait_SPI;
             clear_display:  if ((!busy_flag) & (cycle5)) nextstate_con = cursor_home;
                             else            nextstate_con = clear_display;
@@ -240,32 +239,19 @@ module lcdFSM(
 
   ////////////////////////  Parameters  ////////////////////////////////////////////////////
 
-  /* Note: Clock Frequency on MicroPs iCE40 FPGA is 48MHz. Flag values are rounded up.
-					WE CHANGED THE CLOCK FREQUENCY
-  parameter integer D_50ns  = 3;    // 0.000000050 * CLK_FREQ
-  parameter integer D_250ns = 12;    // 0.000000250 * CLK_FREQ
+  /* Current divided clock frequency is 24 MHz. Flag Values are rounded up.*/
+  parameter integer D_50ns  = 3;    // 30us
+  parameter integer D_250ns = 5;    // 50us
 
-  parameter integer D_40us  = 1920;    // 0.000040000 * CLK_FREQ
-  parameter integer D_60us  = 2880;    // 0.000060000 * CLK_FREQ
-  parameter integer D_200us = 9600;    // 0.000200000 * CLK_FREQ
+  parameter integer D_40us  = 100;    // 1ms
+  parameter integer D_60us  = 100;    // 1ms
+  parameter integer D_200us = 100;    // 1ms
 
-  parameter integer D_2ms   = 96000;    // 0.002000000 * CLK_FREQ
-  parameter integer D_5ms   = 240000;    // 0.005000000 * CLK_FREQ
-  parameter integer D_100ms = 4800000;    // 0.100000000 * CLK_FREQ*/
+  parameter integer D_2ms   = 500;    // 5ms
+  parameter integer D_5ms   = 500;    // 5 ms (after f1) (10us * 500
+  parameter integer D_100ms = 10000;    // 100 ms powerup (10us*10000
 
-  /* Current divided clock frequency is 24 MHz. Flag Values are rounded up.
-  parameter integer D_50ns  = 3;    // 0.000000050 * CLK_FREQ
-  parameter integer D_250ns = 12;    // 0.000000250 * CLK_FREQ
-
-  parameter integer D_40us  = 960;    // 0.000040000 * CLK_FREQ
-  parameter integer D_60us  = 1440;    // 0.000060000 * CLK_FREQ
-  parameter integer D_200us = 4800;    // 0.000200000 * CLK_FREQ
-
-  parameter integer D_2ms   = 48000;    // 0.002000000 * CLK_FREQ
-  parameter integer D_5ms   = 120000;    // 0.005000000 * CLK_FREQ
-  parameter integer D_100ms = 2400000;    // 0.100000000 * CLK_FREQ */
-
-  /* Simulation and FSM test values -- will not work with display! */
+  /* Simulation and FSM test values -- will not work with display! IT WORKED WITH THESE AND 13 as divisor 
   parameter integer D_50ns  = 30;    // 0.000000050 * CLK_FREQ
   parameter integer D_250ns = 30;    // 0.000000250 * CLK_FREQ
 
@@ -275,7 +261,7 @@ module lcdFSM(
 
   parameter integer D_2ms   = 30;    // 0.002000000 * CLK_FREQ
   parameter integer D_5ms   = 30;    // 0.005000000 * CLK_FREQ
-  parameter integer D_100ms = 30;    // 0.100000000 * CLK_FREQ
+  parameter integer D_100ms = 30;    // 0.100000000 * CLK_FREQ */
 
   ////////////////////////  Function Definitions  //////////////////////////////////////////
 
@@ -287,7 +273,7 @@ module lcdFSM(
   `define DF6 8'h01
   `define DF7 8'h06
   `define DF8 8'h0C
-  `define DF9 8'h24
+  `define DF9 8'h7F
 
 
   ////////////////////////  Internal Logic  ////////////////////////////////////////////////
