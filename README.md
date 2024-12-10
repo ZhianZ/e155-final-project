@@ -1,6 +1,6 @@
 # e155-final-project
 
-Jackson Philion and Zhian Zhou, December 5 2024
+Jackson Philion and Zhian Zhou, December 5 2024\
 jphilion@g.hmc.edu and zzhou@g.hmc.edu
 
 This repository contains all of the source code needed to run Fix That Note!
