@@ -25,4 +25,4 @@ This github repository is organized as follows:
     * `demo/` which contains the source files and SEGGER project for our initial 25% completion demonstration. Specifically, this prototype is made to read in an ADC value and print it out to the user
     * `KiCad/` which contains the KiCad schematic file used to create our schematic above
     * `simulationCaptures/` which contains the raw screenshot images taken of ModelSim waveforms for our simulated top.sv code, found in:
-    * `simulationFiles/` which contains the modified version of top.sv, which was made specifically for simulation purposes
+    * `simulationFiles/` which contains the deprecated version of top.sv back before we transitioned to a single file system
